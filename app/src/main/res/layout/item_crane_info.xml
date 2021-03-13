@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="androidx.core.content.ContextCompat" />
+
+
+        <variable
+            name="data"
+            type="com.example.crane.ui.items.CraneInfoUi" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/padding_16dp">
+
+        <LinearLayout
+            android:id="@+id/horizontal_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="@dimen/width_24dp"
+                android:layout_height="@dimen/height_24dp"
+                android:src="@drawable/ic_warning"
+                android:visibility="@{data.required ? View.VISIBLE : View.INVISIBLE }" />
+
+            <TextView
+                android:id="@+id/questionTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="@{data.question}"
+                android:textColor="@color/black21"
+                android:textSize="@dimen/text_size_17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/answerEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_8dp"
+            android:text="@{data.answer}"
+            android:background="@color/whiteSmoke"
+            android:hint="Заполните здесь"
+            android:maxLines="5"
+            android:paddingStart="@dimen/padding_16dp"
+            android:paddingTop="@dimen/padding_14dp"
+            android:layout_marginStart="@dimen/margin_24dp"
+            android:paddingEnd="@dimen/padding_16dp"
+            android:paddingBottom="@dimen/padding_14dp"
+            android:textColor="@color/black33"
+            android:textColorHint="@color/grayColorBD"
+            android:textSize="@dimen/text_size_17sp"
+            android:visibility="@{data.subQuestions.size() > 0 ? View.GONE : View.VISIBLE }"
+            app:boxBackgroundMode="none"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/horizontal_ll" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/sub_questions_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_32dp"
+            android:layoutAnimation="@anim/layout_animation"
+            android:visibility="@{data.subQuestions.size() > 0 ? View.VISIBLE : View.GONE }"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/answerEditText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,7 @@
+include ':ui_components'
+include ':ui_components'
+include ':data'
+include ':di'
+include ':domain'
+include ':app'
+rootProject.name = "Crane"

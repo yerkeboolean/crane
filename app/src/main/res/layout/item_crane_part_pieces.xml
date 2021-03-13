@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="data"
+            type="com.example.crane.ui.items.CranePartPiecesUi" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingTop="@dimen/padding_16dp"
+        android:paddingBottom="@dimen/padding_16dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/width_24dp"
+            android:layout_height="@dimen/height_24dp"
+            android:src="@drawable/ic_warning"
+            android:visibility="@{data.value.filled ? View.INVISIBLE : View.VISIBLE }" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{data.name}"
+                android:textColor="@color/black21"
+                android:textSize="@dimen/text_size_17sp"
+                tools:text="Качество посадки муфты" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/answerEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_8dp"
+                android:text="@{data.comment}"
+                android:background="@color/whiteSmoke"
+                android:hint="Заполните здесь"
+                android:maxLines="5"
+                android:paddingStart="@dimen/padding_16dp"
+                android:paddingTop="@dimen/padding_14dp"
+                android:paddingEnd="@dimen/padding_16dp"
+                android:paddingBottom="@dimen/padding_14dp"
+                android:textColor="@color/black33"
+                android:textColorHint="@color/grayColorBD"
+                android:textSize="@dimen/text_size_17sp"
+                android:visibility="@{data.value.unsatisfactory ? View.VISIBLE : View.GONE }"
+                app:boxBackgroundMode="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/horizontal_ll" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/margin_16dp"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{_->data.onSatisfactoryClick()}"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_8dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Удовлетворительное"
+                    android:textColor="@color/grayColor82"
+                    android:textSize="@dimen/textsize_15sp" />
+
+                <ImageView
+                    android:layout_width="@dimen/width_24dp"
+                    android:layout_height="@dimen/height_24dp"
+                    android:src="@drawable/ic_check_blue"
+                    android:visibility="@{data.value.satisfactory ? View.VISIBLE : View.INVISIBLE}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{_ -> data.onUnsatisfactoryClick()}"
+                android:orientation="horizontal"
+                android:padding="@dimen/padding_8dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/margin_8dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Неудовлетворительное"
+                    android:textColor="@color/grayColor82"
+                    android:textSize="@dimen/textsize_15sp" />
+
+                <ImageView
+                    android:layout_width="@dimen/width_24dp"
+                    android:layout_height="@dimen/height_24dp"
+                    android:src="@drawable/ic_check_blue"
+                    android:visibility="@{data.value.unsatisfactory ? View.VISIBLE : View.INVISIBLE}" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

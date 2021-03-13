@@ -1,0 +1,150 @@
+{
+  "list": [
+    {
+      "required": true,
+      "question": "Владелец крана",
+      "subQuestions": [
+        {
+          "question": "Наименование предприятия"
+        }
+      ]
+    },
+    {
+      "required": true,
+      "question": "Место установки",
+      "subQuestions": [
+        {
+          "question": "Завод"
+        },
+        {
+          "question": "Цех"
+        },
+        {
+          "question": "Отделение"
+        }
+      ]
+    },
+    {
+      "required": true,
+      "question": "Лицо ответственное",
+      "subQuestions": [
+        {
+          "question": "ФИО"
+        },
+        {
+          "question": "Должность"
+        },
+        {
+          "question": "№ приказа"
+        }
+      ]
+    },
+    {
+      "required": true,
+      "question": "Регистрационный номер",
+      "subQuestions": []
+    },
+    {
+      "required": true,
+      "question": "Заводской номер",
+      "subQuestions": []
+    },
+    {
+      "required": true,
+      "question": "Год выпуска",
+      "subQuestions": []
+    },
+    {
+      "required": false,
+      "question": "Завод изготовитель",
+      "subQuestions": []
+    },
+    {
+      "required": true,
+      "question": "Грузоподъемность",
+      "subQuestions": []
+    },
+    {
+      "required": true,
+      "question": "Пролёт",
+      "subQuestions": []
+    },
+    {
+      "required": false,
+      "question": "Режим работы",
+      "subQuestions": [
+        {
+          "question": "Паспортный"
+        },
+        {
+          "question": "Фактический"
+        }
+      ]
+    },
+    {
+      "required": false,
+      "question": "Назначение",
+      "subQuestions": []
+    },
+    {
+      "required": true,
+      "question": "Подвод питания",
+      "subQuestions": []
+    },
+    {
+      "required": true,
+      "question": "Тип управления",
+      "subQuestions": []
+    },
+    {
+      "required": false,
+      "question": "Скорость",
+      "subQuestions": [
+        {
+          "question": "Главного подъема, м/мин"
+        },
+        {
+          "question": "Вспомогательного"
+        },
+        {
+          "question": "Передвижение крана, м/мин"
+        },
+        {
+          "question": "Передвижение тали"
+        }
+      ]
+    },
+    {
+      "required": false,
+      "question": "Данные по минимальной температуре",
+      "subQuestions": []
+    },
+    {
+      "required": false,
+      "question": "Данные по ветровой нагрузке",
+      "subQuestions": []
+    },
+    {
+      "required": false,
+      "question": "Марка стали",
+      "subQuestions": [
+        {
+          "question": "Главная балка"
+        },
+        {
+          "question": "Концевая балка"
+        }
+      ]
+    },
+    {
+      "required": false,
+      "question": "Масса крана",
+      "subQuestions": []
+    },
+    {
+      "required": true,
+      "question": "Данны о последнемм техническом освидетельствовании",
+      "subQuestions": []
+    }
+  ]
+}

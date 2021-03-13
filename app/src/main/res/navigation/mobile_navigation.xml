@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/chooseCraneFragment">
+    <fragment
+        android:id="@+id/navigation_crane_types"
+        android:name="com.example.crane.ui.crane_types.CraneTypesFragment"
+        android:label="CraneTypeFragment"
+        tools:layout="@layout/fragment_crane_types">
+
+        <action
+            android:id="@+id/action_navigation_crane_types_to_craneFullInfoFragment"
+            app:destination="@id/craneFullInfoFragment"
+            app:enterAnim="@anim/slide_in_down"
+            app:exitAnim="@anim/slide_out_down"
+            app:popEnterAnim="@anim/slide_out_up"
+            app:popExitAnim="@anim/slide_in_up" />
+        <action
+            android:id="@+id/action_navigation_crane_types_to_craneMetalConstructorFragment"
+            app:destination="@id/craneMetalConstructorFragment"
+            app:enterAnim="@anim/slide_in_down"
+            app:exitAnim="@anim/slide_out_down"
+            app:popEnterAnim="@anim/slide_out_up"
+            app:popExitAnim="@anim/slide_in_up" />
+        <action
+            android:id="@+id/action_navigation_crane_types_to_chooseCraneFragment"
+            app:destination="@id/chooseCraneFragment"
+            app:enterAnim="@anim/slide_in_down"
+            app:exitAnim="@anim/slide_out_down"
+            app:popEnterAnim="@anim/slide_out_up"
+            app:popExitAnim="@anim/slide_in_up" />
+
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.example.crane.ui.profile.ProfileFragment"
+        android:label="ProfileFragment"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_navigation_profile_to_editProfileFragment"
+            app:destination="@id/editProfileFragment"
+            app:enterAnim="@anim/slide_in_down"
+            app:exitAnim="@anim/slide_out_down"
+            app:popEnterAnim="@anim/slide_out_up"
+            app:popExitAnim="@anim/slide_in_up" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/craneInfoFragment"
+        android:name="com.example.crane.ui.crane_info.CraneInfoFragment"
+        android:label="CraneInfoFragment"
+        tools:layout="@layout/fragment_crane_info">
+
+        <action
+            android:id="@+id/action_craneInfoFragment_to_navigation_crane_types"
+            app:destination="@id/navigation_crane_types"
+            app:enterAnim="@anim/slide_in_down"
+            app:exitAnim="@anim/slide_out_down"
+            app:popEnterAnim="@anim/slide_out_up"
+            app:popExitAnim="@anim/slide_in_up" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/craneFullInfoFragment"
+        android:name="com.example.crane.ui.crane_full_info.CraneFullInfoFragment"
+        android:label="CraneFullInfoFragment"
+        tools:layout="@layout/fragment_crane_full_info" >
+        <action
+            android:id="@+id/action_craneFullInfoFragment_to_navigation_crane_types"
+            app:destination="@id/navigation_crane_types"
+            app:enterAnim="@anim/slide_in_down"
+            app:exitAnim="@anim/slide_out_down"
+            app:popEnterAnim="@anim/slide_out_up"
+            app:popExitAnim="@anim/slide_in_up" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/chooseCraneFragment"
+        android:name="com.example.crane.ui.choose_crane.ChooseCraneFragment"
+        android:label="ChooseCraneFragment"
+        tools:layout="@layout/fragment_choose_crane">
+        <action
+            android:id="@+id/action_chooseCraneFragment_to_craneInfoFragment"
+            app:destination="@id/craneInfoFragment"
+            app:enterAnim="@anim/slide_in_down"
+            app:exitAnim="@anim/slide_out_down"
+            app:popEnterAnim="@anim/slide_out_up"
+            app:popExitAnim="@anim/slide_in_up" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.crane.ui.edit_profile.EditProfileFragment"
+        android:label="EditProfileFragment"
+        tools:layout="@layout/fragment_edit_profile">
+        <action
+            android:id="@+id/action_editProfileFragment_to_navigation_profile"
+            app:destination="@id/navigation_profile"
+            app:enterAnim="@anim/slide_in_down"
+            app:exitAnim="@anim/slide_out_down"
+            app:popEnterAnim="@anim/slide_out_up"
+            app:popExitAnim="@anim/slide_in_up" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/craneMetalConstructorFragment"
+        android:name="com.example.crane.ui.crane_metal_constructor.CraneMetalConstructorInfoFragment"
+        android:label="CraneMetalConstructorFragment"
+        tools:layout="@layout/fragment_crane_metal_constructor_info" >
+        <action
+            android:id="@+id/action_craneMetalConstructorFragment_to_navigation_crane_types"
+            app:destination="@id/navigation_crane_types" />
+    </fragment>
+
+
+</navigation>
